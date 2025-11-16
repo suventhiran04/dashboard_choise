@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import Sidebar from "@/components/sidebar";
 import Topbar from "@/components/topbar";
 import { SidebarProvider, useSidebar } from "@/context/SidebarContext";
+import { Analytics } from "@vercel/analytics/react";
 
 function ContentWrapper({ children }: { children: React.ReactNode }) {
   const { collapsed } = useSidebar();
@@ -16,6 +17,7 @@ function ContentWrapper({ children }: { children: React.ReactNode }) {
       `}
     >
       {children}
+      <Analytics />
     </main>
   );
 }
