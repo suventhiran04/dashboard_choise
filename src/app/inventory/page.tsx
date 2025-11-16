@@ -20,7 +20,9 @@ import {
   X,
 } from "lucide-react";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
+
 
 import {
   ResponsiveContainer,
@@ -90,12 +92,16 @@ const rawProducts: Product[] = [
 /* -------------------------------------------------
    Animations
 -------------------------------------------------- */
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: (i = 0) => ({
+  visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, delay: 0.08 * i, ease: "easeOut" },
+    transition: {
+      duration: 0.5,
+      delay: i * 0.1,
+      ease: [0.16, 1, 0.3, 1], // correct easing format
+    },
   }),
 };
 
